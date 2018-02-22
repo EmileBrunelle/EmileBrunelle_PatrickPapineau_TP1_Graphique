@@ -5,8 +5,8 @@ import java.awt.Graphics;
 
 public class Ovale extends Rectangle {
 
-	public Ovale(int x1, int y1, Color colorCont, Color colorRem, int largeur, int hauteur) {
-		super(x1, y1, colorCont, colorRem, largeur, hauteur);
+	public Ovale(int x1, int y1, Color colorCont, Color colorRem) {
+		super(x1, y1, colorCont, colorRem);
 	}
 
 	@Override

@@ -6,10 +6,8 @@ import java.awt.Graphics;
 public class Rectangle extends Forme{
 private int largeur, hauteur;
 
-	public Rectangle(int x1, int y1, Color colorCont, Color colorRem, int largeur, int hauteur) {
+	public Rectangle(int x1, int y1, Color colorCont, Color colorRem) {
 	super(x1, y1, colorCont, colorRem);
-	this.largeur = largeur;
-	this.hauteur = hauteur;
 }
 
 	public int getLargeur() {
