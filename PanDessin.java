@@ -70,7 +70,7 @@ public class PanDessin extends JPanel {
 				formeCourant = new Trait(e.getX(), e.getY(), Fg, Bg);
 			} else if(indiceForme == 'c') {
 				formeCourant = new Rectangle(e.getX(), e.getY(), Fg, Bg);
-			} else {
+			} else if(indiceForme == 'o'){
 				formeCourant = new Ovale(e.getX(), e.getY(), Fg, Bg);
 			}
 			liste.add(formeCourant);
