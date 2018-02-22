@@ -12,24 +12,29 @@ public class BarreOutils extends JToolBar {
 		JToggleButton btRouge = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/ROUGE.gif")));
 		JToggleButton btVert = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/VERT.gif")));
 		JToggleButton btBlanc = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/BLANC.gif")));
-		JToggleButton btBleu = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/BLEU.gif")));
-		JToggleButton btJaune = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/JAUNE.gif")));
-		JToggleButton btNoir = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/NOIR.gif")));
+		
+		JToggleButton btRBleu = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/BLEU.gif")));
+		JToggleButton btRJaune = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/JAUNE.gif")));
+		JToggleButton btRNoir = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/NOIR.gif")));
 		
 		JToggleButton btRond = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/ROND.gif")));
 		JToggleButton btCarre = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/CARRE.gif")));
 		JToggleButton btTrait = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/TRAIT.gif")));
 		
-		btNoir.setSelected(true);
+		btRouge.setSelected(true);
+		btRNoir.setSelected(true);
 		btTrait.setSelected(true);
 		
 		ButtonGroup groupeCouleurs = new ButtonGroup();
 		groupeCouleurs.add(btRouge);
 		groupeCouleurs.add(btVert);
 		groupeCouleurs.add(btBlanc);
-		groupeCouleurs.add(btBleu);
-		groupeCouleurs.add(btJaune);
-		groupeCouleurs.add(btNoir);
+		
+		ButtonGroup groupeCouleursRempli = new ButtonGroup();
+		
+		groupeCouleursRempli.add(btRBleu);
+		groupeCouleursRempli.add(btRJaune);
+		groupeCouleursRempli.add(btRNoir);
 		
 		ButtonGroup groupeFormes = new ButtonGroup();
 		groupeFormes.add(btRond);
@@ -39,9 +44,9 @@ public class BarreOutils extends JToolBar {
 		add(btRouge);
 		add(btVert);
 		add(btBlanc);
-		add(btBleu);
-		add(btJaune);
-		add(btNoir);
+		add(btRBleu);
+		add(btRJaune);
+		add(btRNoir);
 		
 		add(btRond);
 		add(btCarre);

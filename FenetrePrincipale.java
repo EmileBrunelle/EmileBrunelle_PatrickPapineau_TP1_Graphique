@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class FenetrePrincipale extends JFrame {
 	private static final long serialVersionUID = 1L;
-	JPanel panneau = new JPanel();
+	PanDessin panneau = new PanDessin();
 
 	public FenetrePrincipale() {
 		super("Dessin Vectoriel");
@@ -15,7 +15,7 @@ public class FenetrePrincipale extends JFrame {
 		BarreMenu barreMenu = new BarreMenu();
 		setJMenuBar(barreMenu);
 
-		panneau = new JPanel();
+
 		panneau.setBackground(Color.white);
 		add(panneau, BorderLayout.CENTER);
 		

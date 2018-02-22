@@ -39,7 +39,12 @@ private int largeur, hauteur;
 
 	@Override
 	public void tracer(Graphics g) {
-		// TODO cette méthode s’occupera de dessiner la forme en appelant les méthodes spécifiées au point 2.1
+		g.setColor(getColorRempli());
+		g.fillRect(getFormeX1(), getFormeY1(), largeur, hauteur);
+		g.setColor(getColorContour());
+		g.drawRect(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
+		
+		
 		
 	}
 
