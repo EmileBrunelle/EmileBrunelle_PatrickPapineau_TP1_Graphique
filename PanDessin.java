@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class PanDessin extends JPanel {
 	private static final long serialVersionUID = 1L;
 	Forme formeCourant;
-	Color Fg=Color.BLUE, Bg=Color.CYAN;
+	Color Fg = Color.BLUE, Bg = Color.CYAN;
 	ArrayList<Forme> liste = new ArrayList<Forme>();
 
 	MouseEvent premierClick;

@@ -1,4 +1,5 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -14,10 +15,9 @@ public class FenetrePrincipale extends JFrame {
 		BarreMenu barreMenu = new BarreMenu();
 		setJMenuBar(barreMenu);
 
-
 		panneau.setBackground(Color.white);
 		add(panneau, BorderLayout.CENTER);
-		
+
 		BarreOutils barreOutils = new BarreOutils(panneau);
 		add(barreOutils, BorderLayout.SOUTH);
 

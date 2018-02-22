@@ -3,13 +3,8 @@ package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 import java.awt.Color;
 import java.awt.Graphics;
 
-
-
-public class Trait extends Forme{
+public class Trait extends Forme {
 	private int formeX2, formeY2;
-	
-
-	
 
 	public Trait(int x1, int y1, Color colorCont, Color colorRem, int x2, int y2) {
 		super(x1, y1, colorCont, colorRem);
@@ -23,7 +18,7 @@ public class Trait extends Forme{
 		this.setFormeY1(y1);
 		this.formeX2 = x2;
 		this.formeY2 = y2;
-		
+
 	}
 
 	public int getFormeX2() {
@@ -44,8 +39,9 @@ public class Trait extends Forme{
 
 	@Override
 	public void tracer(Graphics g) {
-		// TODO cette méthode s'occupera de dessiner la forme en appelant les méthodes spécifiées au point 2.1
-		
+		// TODO cette méthode s'occupera de dessiner la forme en appelant les méthodes
+		// spécifiées au point 2.1
+
 	}
 
 }

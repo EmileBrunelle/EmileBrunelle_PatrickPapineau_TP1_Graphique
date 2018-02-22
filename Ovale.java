@@ -8,7 +8,7 @@ public class Ovale extends Rectangle {
 	public Ovale(int x1, int y1, Color colorCont, Color colorRem) {
 		super(x1, y1, colorCont, colorRem);
 	}
-	
+
 	@Override
 	public void tracer(Graphics g) {
 		/*
