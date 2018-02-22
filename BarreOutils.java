@@ -86,11 +86,11 @@ public class BarreOutils extends JToolBar {
 			panneau.setBg(colorRempli);
 
 			if (e.getSource() == btCarre)
-				panneau.setIndiceForme("c");
+				panneau.setIndiceForme('c');
 			else if (e.getSource() == btRond)
-				panneau.setIndiceForme("o");
+				panneau.setIndiceForme('o');
 			else
-				panneau.setIndiceForme("t");
+				panneau.setIndiceForme('t');
 
 		}
 
