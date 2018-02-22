@@ -1,4 +1,5 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
+
 import java.awt.event.KeyEvent;
 
 import javax.swing.JMenu;
@@ -8,12 +9,11 @@ import javax.swing.JMenuItem;
 public class BarreMenu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private JMenu menuFichier, menuAide;
-	private JMenuItem nouveau, enregistrer, enregistrersous, ouvrir, quitter,
-			afficherAide, aPropos;
+	private JMenuItem nouveau, enregistrer, enregistrersous, ouvrir, quitter, afficherAide, aPropos;
 
 	public BarreMenu() {
 
-		// cr�ation du menu couleur
+		// Création du menu couleur
 		menuFichier = new JMenu("Fichier");
 		menuFichier.setMnemonic(KeyEvent.VK_F);
 
@@ -43,7 +43,7 @@ public class BarreMenu extends JMenuBar {
 		afficherAide = new JMenuItem("Afficher l'aide");
 		menuAide.add(afficherAide);
 
-		aPropos = new JMenuItem("� propos de Dessin Vectoriel");
+		aPropos = new JMenuItem("À propos de Dessin Vectoriel");
 		menuAide.add(aPropos);
 
 		add(menuAide);
