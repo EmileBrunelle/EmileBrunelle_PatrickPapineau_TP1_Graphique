@@ -5,11 +5,8 @@ import java.awt.Graphics;
 
 public class Ovale extends Rectangle{
 	
-	private int largeur, hauteur;
-	
 	public Ovale(int x1, int y1, Color colorCont, Color colorRem, int largeur, int hauteur) {
 		super(x1, y1, colorCont, colorRem, largeur, hauteur);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
