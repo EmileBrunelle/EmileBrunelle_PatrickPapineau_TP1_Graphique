@@ -6,10 +6,9 @@ import java.awt.Graphics;
 public class Rectangle extends Forme{
 private int largeur, hauteur;
 
-	public Rectangle(int x1, int y1, Color colorCont, Color colorRem, int largeur, int hauteur) {
+	public Rectangle(int x1, int y1, Color colorCont, Color colorRem) {
 	super(x1, y1, colorCont, colorRem);
-	this.largeur = largeur;
-	this.hauteur = hauteur;
+
 }
 
 	public int getLargeur() {
@@ -33,8 +32,8 @@ private int largeur, hauteur;
 		// TODO Auto-generated method stub
 		this.setFormeX1(x1);
 		this.setFormeY1(y1);
-		this.largeur = x2;
-		this.hauteur = y2;
+		this.largeur = Math.abs(x2-x1);
+		this.hauteur = Math.abs(y2-y1);
 	}
 
 	@Override
