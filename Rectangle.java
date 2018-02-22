@@ -27,9 +27,9 @@ private int largeur, hauteur;
 	}
 
 	@Override
-	public void setParametres(int x1, int x2, int y1, int y2) {
-		this.setFormeX1(x1);
-		this.setFormeY1(y1);
+	public void setParametres(int x1, int y1, int x2, int y2) {
+		this.setFormeX1(Math.min(x1, x2));
+		this.setFormeY1(Math.min(y1, y2));
 		this.largeur = Math.abs(x2-x1);
 		this.hauteur = Math.abs(y2-y1);
 	}

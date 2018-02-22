@@ -14,7 +14,7 @@ abstract class Forme {
 		this.colorRempli = colorRem;
 	}
 
-	public abstract void setParametres(int x1, int x2, int y1, int y2);
+	public abstract void setParametres(int x1, int y1, int x2, int y2);
 
 	public abstract void tracer(Graphics g);
 

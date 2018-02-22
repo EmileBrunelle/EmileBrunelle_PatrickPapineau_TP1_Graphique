@@ -7,6 +7,7 @@ import javax.swing.JToolBar;
 
 public class BarreOutils extends JToolBar {
 	private static final long serialVersionUID = 1L;
+	PanDessin panneau;
 
 	public BarreOutils() {
 
