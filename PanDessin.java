@@ -17,6 +17,14 @@ public class PanDessin extends JPanel {
 	ArrayList<Forme> liste = new ArrayList<Forme>();
 	private char indiceForme;
 
+	public char getIndiceForme() {
+		return indiceForme;
+	}
+
+	public void setIndiceForme(char indiceForme) {
+		this.indiceForme = indiceForme;
+	}
+
 	MouseEvent premierClick;
 
 	public PanDessin() {
