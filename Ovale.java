@@ -11,8 +11,10 @@ public class Ovale extends Rectangle {
 
 	@Override
 	public void tracer(Graphics g) {
-		// Cette méthode s'occupe de dessiner l'ovale en appelant les méthodes
-		// spécifiées au point 2.1 de l'énoncé
+		/*
+		 * Cette méthode s'occupe de dessiner l'ovale en appelant les méthodes
+		 * spécifiées au point 2.1 de l'énoncé
+		 */
 		g.setColor(getColorRempli());
 		g.fillRect(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
 		g.setColor(getColorContour());
