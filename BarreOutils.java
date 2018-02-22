@@ -80,10 +80,10 @@ public class BarreOutils extends JToolBar {
 
 			if (e.getSource() == btBlanc)
 				colorContour = Color.WHITE;
-			else if (e.getSource() == btRouge)
-				colorContour = Color.RED;
-			else
+			else if (e.getSource() == btVert)
 				colorContour = Color.GREEN;
+			else
+				colorContour = Color.RED;
 
 			if (e.getSource() == btRBleu)
 				colorRempli = Color.BLUE;
