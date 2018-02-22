@@ -9,7 +9,7 @@ public class BarreOutils extends JToolBar {
 	private static final long serialVersionUID = 1L;
 	PanDessin panneau;
 
-	public BarreOutils() {
+	public BarreOutils(PanDessin panneau) {
 
 		JToggleButton btRouge = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/ROUGE.gif")));
 		JToggleButton btVert = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/VERT.gif")));

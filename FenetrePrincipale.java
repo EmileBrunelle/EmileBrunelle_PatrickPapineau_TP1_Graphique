@@ -18,7 +18,7 @@ public class FenetrePrincipale extends JFrame {
 		panneau.setBackground(Color.white);
 		add(panneau, BorderLayout.CENTER);
 		
-		BarreOutils barreOutils = new BarreOutils();
+		BarreOutils barreOutils = new BarreOutils(panneau);
 		add(barreOutils, BorderLayout.SOUTH);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
