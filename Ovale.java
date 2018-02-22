@@ -14,7 +14,7 @@ public class Ovale extends Rectangle{
 
 	@Override
 	public void tracer(Graphics g) {
-		// TODO cette méthode s’occupera de dessiner la forme en appelant les méthodes spécifiées au point 2.1
+		// TODO cette mÃ©thode s'occupera de dessiner la forme en appelant les mÃ©thodes spÃ©cifiÃ©es au point 2.1
 		
 	}
 }
