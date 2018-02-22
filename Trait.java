@@ -28,7 +28,7 @@ public class Trait extends Forme {
 	}
 
 	@Override
-	public void setParametres(int x1, int x2, int y1, int y2) {
+	public void setParametres(int x1, int y1, int x2, int y2) {
 		this.setFormeX1(x1);
 		this.setFormeY1(y1);
 		this.formeX2 = x2;
@@ -56,7 +56,9 @@ public class Trait extends Forme {
 	public void tracer(Graphics g) {
 		// TODO cette méthode s'occupera de dessiner la forme en appelant les méthodes
 		// spécifiées au point 2.1
-
+		g.setColor(getColorRempli());
+		g.setColor(getColorContour());
+		g.drawLine(getFormeX1(), getFormeY1(), formeX2, formeY2);
 	}
 
 }
