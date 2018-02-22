@@ -19,7 +19,6 @@ public class Trait extends Forme{
 
 	@Override
 	public void setParametres(int x1, int x2, int y1, int y2) {
-		// TODO Auto-generated method stub
 		this.setFormeX1(x1);
 		this.setFormeY1(y1);
 		this.formeX2 = x2;
