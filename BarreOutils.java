@@ -101,7 +101,7 @@ public class BarreOutils extends JToolBar {
 				panneau.setIndiceForme('o');
 			else
 				panneau.setIndiceForme('t');
-
+			System.out.println(colorContour.toString()+" "+colorRempli.toString()+" "+panneau.getIndiceForme());
 		}
 
 	}
