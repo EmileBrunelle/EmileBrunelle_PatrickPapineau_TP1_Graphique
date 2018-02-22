@@ -6,9 +6,24 @@ import java.awt.Graphics;
 public class Trait extends Forme {
 	private int formeX2, formeY2;
 
-	public Trait(int x1, int y1, Color colorCont, Color colorRem, int x2, int y2) {
+	public Trait(int x1, int y1, Color colorCont, Color colorRem) {
 		super(x1, y1, colorCont, colorRem);
+
+	}
+	
+	public int getX2() {
+		return formeX2;
+	}
+
+	public void setX2(int x2) {
 		this.formeX2 = x2;
+	}
+
+	public int getY2() {
+		return formeY2;
+	}
+
+	public void setY2(int y2) {
 		this.formeY2 = y2;
 	}
 

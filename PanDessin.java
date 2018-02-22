@@ -15,6 +15,7 @@ public class PanDessin extends JPanel {
 	Forme formeCourant;
 	Color Fg, Bg;
 	ArrayList<Forme> liste = new ArrayList<Forme>();
+	private char indiceForme;
 
 	MouseEvent premierClick;
 
@@ -52,20 +53,25 @@ public class PanDessin extends JPanel {
 		this.premierClick = premierClick;
 	}
 
-
-
 	private class MouvementSourisListener implements MouseListener, MouseMotionListener {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
 			premierClick = e;
-			formeCourant = new Rectangle(e.getX(), e.getY(), Fg, Bg);
+			if (indiceForme == 't') {
+				formeCourant = new Trait(x1, y1, colorCont, colorRem, x2, y2)
+			} else if(indiceForme == 'c') {
+				formeCourant = new Rectangle(e.getX(), e.getY(), Fg, Bg);
+			}else if(indiceForme == 'o'){
+				
+			}
 			liste.add(formeCourant);
 
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent e) {}
+		public void mouseReleased(MouseEvent e) {
+		}
 
 		@Override
 		public void mouseDragged(MouseEvent e) {
@@ -74,16 +80,20 @@ public class PanDessin extends JPanel {
 		}
 
 		@Override
-		public void mouseMoved(MouseEvent arg0) {}
+		public void mouseMoved(MouseEvent arg0) {
+		}
 
 		@Override
-		public void mouseClicked(MouseEvent arg0) {}
+		public void mouseClicked(MouseEvent arg0) {
+		}
 
 		@Override
-		public void mouseEntered(MouseEvent arg0) {}
+		public void mouseEntered(MouseEvent arg0) {
+		}
 
 		@Override
-		public void mouseExited(MouseEvent arg0) {}
+		public void mouseExited(MouseEvent arg0) {
+		}
 
 	}
 }
