@@ -32,6 +32,28 @@ public class PanDessin extends JPanel {
 		}
 	}
 
+	public void setFormeCourant(Forme formeCourant) {
+		this.formeCourant = formeCourant;
+	}
+
+	public void setFg(Color fg) {
+		Fg = fg;
+	}
+
+	public void setBg(Color bg) {
+		Bg = bg;
+	}
+
+	public void setListe(ArrayList<Forme> liste) {
+		this.liste = liste;
+	}
+
+	public void setPremierClick(MouseEvent premierClick) {
+		this.premierClick = premierClick;
+	}
+
+
+
 	private class MouvementSourisListener implements MouseListener, MouseMotionListener {
 
 		@Override
