@@ -29,6 +29,16 @@ public class BarreOutils extends JToolBar {
 		btRond = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/ROND.gif")));
 		btCarre = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/CARRE.gif")));
 		btTrait = new JToggleButton(new ImageIcon(BarreOutils.class.getResource("img/TRAIT.gif")));
+		
+		btRouge.addActionListener(new GestionForme());
+		btVert.addActionListener(new GestionForme());
+		btBlanc.addActionListener(new GestionForme());
+		btRBleu.addActionListener(new GestionForme());
+		btRJaune.addActionListener(new GestionForme());
+		btRNoir.addActionListener(new GestionForme());
+		btRond.addActionListener(new GestionForme());
+		btCarre.addActionListener(new GestionForme());
+		btTrait.addActionListener(new GestionForme());
 
 		btRouge.setSelected(true);
 		btRNoir.setSelected(true);
@@ -62,7 +72,7 @@ public class BarreOutils extends JToolBar {
 		add(btTrait);
 	}
 
-	private class gestionForme implements ActionListener {
+	private class GestionForme implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
