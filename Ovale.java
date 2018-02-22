@@ -16,7 +16,7 @@ public class Ovale extends Rectangle {
 		 * spécifiées au point 2.1 de l'énoncé
 		 */
 		g.setColor(getColorRempli());
-		g.fillRect(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
+		g.fillOval(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
 		g.setColor(getColorContour());
 		g.drawOval(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
 	}
