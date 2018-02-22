@@ -15,10 +15,10 @@ public class PanDessin extends JPanel {
 	Forme formeCourant;
 	Color Fg, Bg;
 	ArrayList<Forme> liste = new ArrayList<Forme>();
-	private char indiceForme;
+	private char indiceForme = 't';
 
 	public char getIndiceForme() {
-		return indiceForme = 't';
+		return indiceForme;
 	}
 
 	public void setIndiceForme(char indiceForme) {
