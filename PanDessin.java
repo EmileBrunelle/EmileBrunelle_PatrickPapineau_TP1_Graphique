@@ -25,8 +25,11 @@ public class PanDessin extends JPanel {
 	}
 
 	@Override
-	protected void paintComponent(Graphics arg0) {
-		super.paintComponent(arg0);
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		for (Forme forme : liste) {
+			forme.tracer(g);
+		}
 	}
 
 	private class MouvementSourisListener implements MouseListener, MouseMotionListener {
