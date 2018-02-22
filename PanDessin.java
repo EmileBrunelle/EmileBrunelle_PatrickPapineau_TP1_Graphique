@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 public class PanDessin extends JPanel {
 	Color Fg, Bg;
 
+	private class MouvementSourisListener implements MouseListener, MouseMotionListener {
+
+	}
 }
-
-
