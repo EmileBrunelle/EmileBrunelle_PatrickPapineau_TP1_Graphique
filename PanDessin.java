@@ -59,7 +59,7 @@ public class PanDessin extends JPanel {
 		public void mousePressed(MouseEvent e) {
 			premierClick = e;
 			if (indiceForme == 't') {
-				formeCourant = new Trait(x1, y1, colorCont, colorRem, x2, y2)
+				formeCourant = new Trait(e.getX(), e.getY(), Fg, Bg);
 			} else if(indiceForme == 'c') {
 				formeCourant = new Rectangle(e.getX(), e.getY(), Fg, Bg);
 			}else if(indiceForme == 'o'){
