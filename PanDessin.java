@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class PanDessin extends JPanel {
 	private static final long serialVersionUID = 1L;
 	Forme formeCourant;
-	Color Fg = Color.BLUE, Bg = Color.CYAN;
+	Color Fg, Bg;
 	ArrayList<Forme> liste = new ArrayList<Forme>();
 
 	MouseEvent premierClick;
@@ -43,10 +43,7 @@ public class PanDessin extends JPanel {
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-
-		}
+		public void mouseReleased(MouseEvent e) {}
 
 		@Override
 		public void mouseDragged(MouseEvent e) {
@@ -55,28 +52,16 @@ public class PanDessin extends JPanel {
 		}
 
 		@Override
-		public void mouseMoved(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-
-		}
+		public void mouseMoved(MouseEvent arg0) {}
 
 		@Override
-		public void mouseClicked(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-
-		}
+		public void mouseClicked(MouseEvent arg0) {}
 
 		@Override
-		public void mouseEntered(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-
-		}
+		public void mouseEntered(MouseEvent arg0) {}
 
 		@Override
-		public void mouseExited(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-
-		}
+		public void mouseExited(MouseEvent arg0) {}
 
 	}
 }
