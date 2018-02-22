@@ -30,7 +30,6 @@ private int largeur, hauteur;
 
 	@Override
 	public void setParametres(int x1, int x2, int y1, int y2) {
-		// TODO Auto-generated method stub
 		this.setFormeX1(x1);
 		this.setFormeY1(y1);
 		this.largeur = x2;
@@ -40,12 +39,9 @@ private int largeur, hauteur;
 	@Override
 	public void tracer(Graphics g) {
 		g.setColor(getColorRempli());
-		g.fillRect(getFormeX1(), getFormeY1(), largeur, hauteur);
+		g.fillRect(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
 		g.setColor(getColorContour());
 		g.drawRect(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
-		
-		
-		
 	}
 
 }
