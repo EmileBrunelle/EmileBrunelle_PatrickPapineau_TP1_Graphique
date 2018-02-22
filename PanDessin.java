@@ -18,7 +18,7 @@ public class PanDessin extends JPanel {
 	private char indiceForme;
 
 	public char getIndiceForme() {
-		return indiceForme;
+		return indiceForme = 't';
 	}
 
 	public void setIndiceForme(char indiceForme) {
