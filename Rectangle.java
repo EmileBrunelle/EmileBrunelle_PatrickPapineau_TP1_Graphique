@@ -1,7 +1,7 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class Rectangle extends Forme {
 	private int largeur, hauteur;
@@ -35,7 +35,7 @@ public class Rectangle extends Forme {
 	}
 
 	@Override
-	public void tracer(Graphics g) {
+	public void tracer(Graphics2D g) {
 		g.setColor(getColorRempli());
 		g.fillRect(getFormeX1(), getFormeY1(), getLargeur(), getHauteur());
 		g.setColor(getColorContour());

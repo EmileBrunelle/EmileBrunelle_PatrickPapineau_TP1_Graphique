@@ -76,32 +76,24 @@ public class BarreOutils extends JToolBar {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			Color colorContour, colorRempli;
-
 			if (e.getSource() == btBlanc)
-				colorContour = Color.WHITE;
+				panneau.setFg(Color.WHITE);
+			else if (e.getSource() == btVert)
+				panneau.setFg(Color.GREEN);
 			else if (e.getSource() == btRouge)
-				colorContour = Color.RED;
-			else
-				colorContour = Color.GREEN;
-
-			if (e.getSource() == btRBleu)
-				colorRempli = Color.BLUE;
+				panneau.setFg(Color.RED);
+			else if (e.getSource() == btRBleu)
+				panneau.setBg(Color.BLUE);
 			else if (e.getSource() == btRJaune)
-				colorRempli = Color.YELLOW;
-			else
-				colorRempli = Color.BLACK;
-
-			panneau.setFg(colorContour);
-			panneau.setBg(colorRempli);
-
-			if (e.getSource() == btCarre)
+				panneau.setBg(Color.YELLOW);
+			else if (e.getSource() == btRNoir)
+				panneau.setBg(Color.BLACK);
+			else if (e.getSource() == btCarre)
 				panneau.setIndiceForme('c');
 			else if (e.getSource() == btRond)
 				panneau.setIndiceForme('o');
-			else
+			else if (e.getSource() == btTrait)
 				panneau.setIndiceForme('t');
-			System.out.println(colorContour.toString()+" "+colorRempli.toString()+" "+panneau.getIndiceForme());
 		}
 
 	}

@@ -1,7 +1,7 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class Trait extends Forme {
 	private int formeX2, formeY2;
@@ -53,7 +53,7 @@ public class Trait extends Forme {
 	}
 
 	@Override
-	public void tracer(Graphics g) {
+	public void tracer(Graphics2D g) {
 		g.setColor(getColorRempli());
 		g.setColor(getColorContour());
 		g.drawLine(getFormeX1(), getFormeY1(), formeX2, formeY2);

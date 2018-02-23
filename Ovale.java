@@ -1,7 +1,7 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class Ovale extends Rectangle {
 
@@ -10,7 +10,7 @@ public class Ovale extends Rectangle {
 	}
 
 	@Override
-	public void tracer(Graphics g) {
+	public void tracer(Graphics2D g) {
 		/*
 		 * Cette méthode s'occupe de dessiner l'ovale en appelant les méthodes
 		 * spécifiées au point 2.1 de l'énoncé

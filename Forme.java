@@ -1,7 +1,7 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 abstract class Forme {
 	private int formeX1, formeY1;
@@ -16,7 +16,7 @@ abstract class Forme {
 
 	public abstract void setParametres(int x1, int y1, int x2, int y2);
 
-	public abstract void tracer(Graphics g);
+	public abstract void tracer(Graphics2D g);
 
 	public int getFormeX1() {
 		return formeX1;
