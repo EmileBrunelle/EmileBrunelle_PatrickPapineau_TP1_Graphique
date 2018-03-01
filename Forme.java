@@ -2,8 +2,13 @@ package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.io.Serializable;
 
-abstract class Forme {
+abstract class Forme implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5985247140737504336L;
 	private int formeX1, formeY1;
 	private Color colorContour, colorRempli;
 
