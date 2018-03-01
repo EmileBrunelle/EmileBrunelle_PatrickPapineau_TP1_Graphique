@@ -73,6 +73,10 @@ public class PanDessin extends JPanel {
 	public Color getBg() {
 		return Bg;
 	}
+	
+	public void resetListe() {
+		liste .clear();
+	}
 
 	public void setListe(ArrayList<Forme> liste) {
 		this.liste = liste;
