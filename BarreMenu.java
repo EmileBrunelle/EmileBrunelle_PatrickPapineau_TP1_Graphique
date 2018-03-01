@@ -20,10 +20,10 @@ public class BarreMenu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private JMenu menuFichier, menuAide;
 	private JMenuItem nouveau, enregistrer, enregistrersous, ouvrir, quitter, afficherAide, aPropos;
-	private PanDessin panneau;
+	private PanDessin panneau, panneauTemp;
 
 	public BarreMenu(PanDessin panneau) {
-		
+
 		this.panneau = panneau;
 
 		// Création du menu couleur
@@ -77,10 +77,7 @@ public class BarreMenu extends JMenuBar {
 		this.panneau = panneau;
 	}
 
-
-
 	private class GestionBarreMenu implements ActionListener {
-		
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -88,7 +85,7 @@ public class BarreMenu extends JMenuBar {
 
 			switch (indButton) {
 			case "Nouveau":
-				nouveau(e);
+				nouveau();
 				break;
 			case "Enregistrer":
 				enregistrer();
@@ -97,13 +94,13 @@ public class BarreMenu extends JMenuBar {
 				enregistrerSous();
 				break;
 			case "Ouvrir":
-				ouvrir(e);
+				ouvrir();
 				break;
 			case "Quitter":
-				;
+				quitter();
 				break;
 			case "A propos de Dessin Vectoriel":
-				aPropos(e);
+				aPropos();
 				break;
 
 			default:
@@ -113,60 +110,60 @@ public class BarreMenu extends JMenuBar {
 
 		}
 
-		private void nouveau(ActionEvent e) {
+		private void nouveau() {
 			panneau.resetListe();
 			panneau.repaint();
-			
+
 		}
 
 		private void enregistrer() {
 			if (panneau.getNomFichier() != null) {
 				ObjectOutputStream enregistrement = null;
-				try
-		        {
-		            enregistrement = new ObjectOutputStream(new FileOutputStream(panneau.getNomFichier()));
-		            enregistrement.writeObject(panneau.getListe());
-		        } 
-		        catch (FileNotFoundException fichierNonTrouve) 
-		        {
-		        	JOptionPane.showMessageDialog(panneau, "Fichier non trouvé");
-		        } 
-		        catch (IOException exc) 
-		        {
-		        	JOptionPane.showMessageDialog(panneau, "Problème d'enregistrement du fichier");
-		        } finally {
-		        	try {
+				try {
+					enregistrement = new ObjectOutputStream(new FileOutputStream(panneau.getNomFichier()));
+					enregistrement.writeObject(panneau.getListe());
+					panneauTemp = panneau;
+				} catch (FileNotFoundException fichierNonTrouve) {
+					JOptionPane.showMessageDialog(panneau, "Fichier non trouvé");
+				} catch (IOException exc) {
+					JOptionPane.showMessageDialog(panneau, "Problème d'enregistrement du fichier");
+				} finally {
+					try {
 						enregistrement.close();
-					} catch (IOException e1) {
-						JOptionPane.showMessageDialog(panneau, "Problème d'enregistrement du fichier");
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
-		        }
+				}
 			} else {
 				enregistrerSous();
 			}
-			
+
 		}
 
 		private void enregistrerSous() {
 			JFileChooser sauvegarde = new JFileChooser();
 			sauvegarde.setDialogTitle("Enregistrez sous");
 			sauvegarde.addChoosableFileFilter(new FileNameExtensionFilter("Fichiers de formes", "formes"));
-			
+
 			if (sauvegarde.showSaveDialog(panneau) == JFileChooser.APPROVE_OPTION) {
 				panneau.setNomFichier(sauvegarde.getSelectedFile().getAbsolutePath());
 				enregistrer();
 			}
 		}
 
-		private void ouvrir(ActionEvent e) {
-			
-		}
-
-		private void quitter(ActionEvent e) {
+		private void ouvrir() {
 
 		}
 
-		private void aPropos(ActionEvent e) {
+		private void quitter() {
+			if (panneau != panneauTemp) {
+				// TODO Ajouter confirmation pour quitter et enregistrer
+			} else {
+				System.exit(0);
+			}
+		}
+
+		private void aPropos() {
 			String Auteurs = "Patrick Papineau et Emile Brunelle";
 			JOptionPane.showMessageDialog(null,
 					"Auteur : " + Auteurs + "\nNom de l'application : Dessin Vectoriel\nVersion : 1.0");
