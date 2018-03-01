@@ -78,7 +78,7 @@ public class BarreMenu extends JMenuBar {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String indButton = e.getActionCommand();
-			System.out.println(indButton);
+
 			switch (indButton) {
 			case "Nouveau":
 				nouveau(e);
@@ -107,7 +107,9 @@ public class BarreMenu extends JMenuBar {
 		}
 
 		private void nouveau(ActionEvent e) {
-
+			panneau.resetListe();
+			panneau.repaint();
+			
 		}
 
 		private void enregistrer(ActionEvent e) {

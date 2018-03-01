@@ -75,7 +75,7 @@ public class PanDessin extends JPanel {
 	}
 	
 	public void resetListe() {
-		liste = new ArrayList<Forme>();
+		liste .clear();
 	}
 
 	public void setListe(ArrayList<Forme> liste) {
