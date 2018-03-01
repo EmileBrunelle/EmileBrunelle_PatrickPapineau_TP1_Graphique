@@ -58,32 +58,58 @@ public class BarreMenu extends JMenuBar {
 		add(menuAide);
 
 	}
-	
+
 	private class GestionBarreMenu implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String indButton = e.getActionCommand();
 			System.out.println(indButton);
-	        switch (indButton) {
-	            case "Nouveau":  ;
-	                     break;
-	            case "Enregistrer": ;
-	                     break;
-	            case "Enregistrer-sous":  ;
-	                     break;
-	            case "Ouvrir":  ;
-	                     break;
-	            case "Quitter":  ;
-	                     break;
-	            case "A propos de Dessin Vectoriel":  ;
-	                     break;
+			switch (indButton) {
+			case "Nouveau":
+				;
+				break;
+			case "Enregistrer":
+				;
+				break;
+			case "Enregistrer-sous":
+				;
+				break;
+			case "Ouvrir":
+				;
+				break;
+			case "Quitter":
+				;
+				break;
+			case "A propos de Dessin Vectoriel":
+				;
+				break;
 
-	            default: System.out.println("Default case");
-	                     break;
-	        }
-			
-			
+			default:
+				System.out.println("Default case");
+				break;
+			}
+
+		}
+
+		private void nouveau(ActionEvent e) {
+
+		}
+
+		private void enregistrer(ActionEvent e) {
+
+		}
+
+		private void enregistrerSous(ActionEvent e) {
+
+		}
+		
+		private void ouvrir(ActionEvent e) {
+
+		}
+		
+		private void quitter(ActionEvent e) {
+
 		}
 
 	}
