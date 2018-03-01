@@ -68,7 +68,7 @@ public class BarreMenu extends JMenuBar {
 			System.out.println(indButton);
 			switch (indButton) {
 			case "Nouveau":
-				;
+				nouveau(e);
 				break;
 			case "Enregistrer":
 				enregistrer(e);
@@ -77,13 +77,13 @@ public class BarreMenu extends JMenuBar {
 				enregistrerSous(e);
 				break;
 			case "Ouvrir":
-				;
+				ouvrir(e);
 				break;
 			case "Quitter":
 				;
 				break;
 			case "A propos de Dessin Vectoriel":
-				;
+				aPropos(e);
 				break;
 
 			default:
@@ -94,7 +94,7 @@ public class BarreMenu extends JMenuBar {
 		}
 
 		private void nouveau(ActionEvent e) {
-			
+
 		}
 
 		private void enregistrer(ActionEvent e) {
@@ -104,17 +104,19 @@ public class BarreMenu extends JMenuBar {
 		private void enregistrerSous(ActionEvent e) {
 
 		}
-		
+
 		private void ouvrir(ActionEvent e) {
 
 		}
-		
+
 		private void quitter(ActionEvent e) {
 
 		}
-		
+
 		private void aPropos(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Mon premier message.");
+			String Auteurs = "Patrick Papineau et Emile Brunelle";
+			JOptionPane.showMessageDialog(null,
+					"Auteur : " + Auteurs + "\nNom de l'application : Dessin Vectoriel\nVersion : 1.0");
 		}
 
 	}
