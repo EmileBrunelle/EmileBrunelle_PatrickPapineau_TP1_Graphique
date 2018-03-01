@@ -18,6 +18,7 @@ public class PanDessin extends JPanel {
 	private Color Fg = Color.RED, Bg = Color.BLACK;
 	private ArrayList<Forme> liste = new ArrayList<Forme>();
 	private char indiceForme = 't';
+	private String nomFichier = null;
 
 	public char getIndiceForme() {
 		return indiceForme;
@@ -25,6 +26,14 @@ public class PanDessin extends JPanel {
 
 	public void setIndiceForme(char indiceForme) {
 		this.indiceForme = indiceForme;
+	}
+	
+	public String getNomFichier() {
+		return nomFichier;
+	}
+	
+	public void nomFichier(String nomFichier) {
+		this.nomFichier = nomFichier;
 	}
 
 	MouseEvent premierClick;
@@ -67,6 +76,10 @@ public class PanDessin extends JPanel {
 
 	public void setListe(ArrayList<Forme> liste) {
 		this.liste = liste;
+	}
+	
+	public ArrayList<Forme> getListe() {
+		return liste;
 	}
 
 	public void setPremierClick(MouseEvent premierClick) {

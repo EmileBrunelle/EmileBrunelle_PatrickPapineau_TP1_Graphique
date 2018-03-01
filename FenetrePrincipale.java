@@ -12,7 +12,7 @@ public class FenetrePrincipale extends JFrame {
 	public FenetrePrincipale() {
 		super("Dessin Vectoriel");
 		setSize(400, 350);
-		BarreMenu barreMenu = new BarreMenu();
+		BarreMenu barreMenu = new BarreMenu(panneau);
 		setJMenuBar(barreMenu);
 
 		panneau.setBackground(Color.white);
