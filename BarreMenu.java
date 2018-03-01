@@ -3,7 +3,7 @@ package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -14,8 +14,11 @@ public class BarreMenu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private JMenu menuFichier, menuAide;
 	private JMenuItem nouveau, enregistrer, enregistrersous, ouvrir, quitter, afficherAide, aPropos;
+	private PanDessin panneau;
 
-	public BarreMenu() {
+	public BarreMenu(PanDessin panneau) {
+		
+		this.panneau = panneau;
 
 		// Création du menu couleur
 		menuFichier = new JMenu("Fichier");
@@ -60,6 +63,16 @@ public class BarreMenu extends JMenuBar {
 
 	}
 
+	public PanDessin getPanneau() {
+		return panneau;
+	}
+
+	public void setPanneau(PanDessin panneau) {
+		this.panneau = panneau;
+	}
+
+
+
 	private class GestionBarreMenu implements ActionListener {
 
 		@Override
@@ -98,7 +111,11 @@ public class BarreMenu extends JMenuBar {
 		}
 
 		private void enregistrer(ActionEvent e) {
-			e.getSource();
+			PanDessin panDessin = (PanDessin) e.getSource();
+			ArrayList<Forme> liste = panDessin.getListe();
+			for (Forme forme : liste) {
+				System.out.println(forme.toString());
+			}
 		}
 
 		private void enregistrerSous(ActionEvent e) {
