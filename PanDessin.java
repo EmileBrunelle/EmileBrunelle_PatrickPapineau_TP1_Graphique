@@ -32,7 +32,7 @@ public class PanDessin extends JPanel {
 		return nomFichier;
 	}
 	
-	public void nomFichier(String nomFichier) {
+	public void setNomFichier(String nomFichier) {
 		this.nomFichier = nomFichier;
 	}
 

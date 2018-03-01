@@ -3,12 +3,18 @@ package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
+import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class BarreMenu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
@@ -18,7 +24,7 @@ public class BarreMenu extends JMenuBar {
 
 	public BarreMenu(PanDessin panneau) {
 		
-		this.panneau = panneau;
+		setPanneau(panneau);
 
 		// Création du menu couleur
 		menuFichier = new JMenu("Fichier");
@@ -71,8 +77,6 @@ public class BarreMenu extends JMenuBar {
 		this.panneau = panneau;
 	}
 
-
-
 	private class GestionBarreMenu implements ActionListener {
 
 		@Override
@@ -110,16 +114,43 @@ public class BarreMenu extends JMenuBar {
 			
 		}
 
-		private void enregistrer(ActionEvent e) {
-			PanDessin panDessin = (PanDessin) e.getSource();
-			ArrayList<Forme> liste = panDessin.getListe();
-			for (Forme forme : liste) {
-				System.out.println(forme.toString());
+		private void enregistrer() {
+			if (panneau.getNomFichier() != null) {
+				ObjectOutputStream enregistrement = null;
+				try
+		        {
+		            enregistrement = new ObjectOutputStream(new FileOutputStream(panneau.getNomFichier()));
+		            enregistrement.writeObject(panneau.getListe());
+		        } 
+		        catch (FileNotFoundException fichierNonTrouve) 
+		        {
+		        	JOptionPane.showMessageDialog(panneau, "Fichier non trouvé");
+		        } 
+		        catch (IOException exc) 
+		        {
+		        	JOptionPane.showMessageDialog(panneau, "Problème d'enregistrement du fichier");
+		        } finally {
+		        	try {
+						enregistrement.close();
+					} catch (IOException e1) {
+						JOptionPane.showMessageDialog(panneau, "Problème d'enregistrement du fichier");
+					}
+		        }
+			} else {
+				enregistrerSous();
 			}
+			
 		}
 
-		private void enregistrerSous(ActionEvent e) {
-
+		private void enregistrerSous() {
+			JFileChooser sauvegarde = new JFileChooser();
+			sauvegarde.setDialogTitle("Enregistrez sous");
+			sauvegarde.addChoosableFileFilter(new FileNameExtensionFilter("Fichiers de formes", "formes"));
+			
+			if (sauvegarde.showSaveDialog(panneau) == JFileChooser.APPROVE_OPTION) {
+				panneau.setNomFichier(sauvegarde.getSelectedFile().getAbsolutePath());
+				enregistrer();
+			}
 		}
 		
 		private void ouvrir(ActionEvent e) {
