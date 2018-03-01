@@ -8,6 +8,7 @@ import java.util.Arrays;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 public class BarreMenu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
@@ -110,6 +111,10 @@ public class BarreMenu extends JMenuBar {
 		
 		private void quitter(ActionEvent e) {
 
+		}
+		
+		private void aPropos(ActionEvent e) {
+			JOptionPane.showMessageDialog(null, "Mon premier message.");
 		}
 
 	}
