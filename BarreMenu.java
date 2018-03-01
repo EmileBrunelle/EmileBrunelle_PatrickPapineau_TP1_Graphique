@@ -70,10 +70,10 @@ public class BarreMenu extends JMenuBar {
 				;
 				break;
 			case "Enregistrer":
-				;
+				enregistrer(e);
 				break;
 			case "Enregistrer-sous":
-				;
+				enregistrerSous(e);
 				break;
 			case "Ouvrir":
 				;
@@ -93,11 +93,11 @@ public class BarreMenu extends JMenuBar {
 		}
 
 		private void nouveau(ActionEvent e) {
-
+			
 		}
 
 		private void enregistrer(ActionEvent e) {
-
+			e.getSource();
 		}
 
 		private void enregistrerSous(ActionEvent e) {
