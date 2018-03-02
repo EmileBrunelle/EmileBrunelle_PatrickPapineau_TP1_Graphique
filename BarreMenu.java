@@ -3,9 +3,12 @@ package EmileBrunelle_PatrickPapineau_TP1_Graphique;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -19,7 +22,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class BarreMenu extends JMenuBar {
 	private static final long serialVersionUID = 1L;
 	private JMenu menuFichier, menuAide;
-	private JMenuItem nouveau, enregistrer, enregistrersous, ouvrir, quitter, afficherAide, aPropos;
+	private JMenuItem nouveau, enregistrer, enregistrersous, ouvrir, quitter,
+			afficherAide, aPropos;
 	private PanDessin panneau, panneauTemp;
 
 	public BarreMenu(PanDessin panneau) {
@@ -94,7 +98,12 @@ public class BarreMenu extends JMenuBar {
 				enregistrerSous();
 				break;
 			case "Ouvrir":
-				ouvrir();
+				try {
+					ouvrir();
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				break;
 			case "Quitter":
 				quitter();
@@ -111,8 +120,19 @@ public class BarreMenu extends JMenuBar {
 		}
 
 		private void nouveau() {
-			panneau.resetListe();
-			panneau.repaint();
+			if (panneau != panneauTemp && panneau.getListe().size() != 0) {
+				int choix = JOptionPane.showConfirmDialog(null,
+						"Voulez-vous sauvegarder vos changement ?");
+				if (choix == 0) {
+					enregistrer();
+				} else if (choix == 1) {
+					panneau.resetListe();
+					panneau.repaint();
+				}
+			} else {
+				panneau.resetListe();
+				panneau.repaint();
+			}
 
 		}
 
@@ -120,13 +140,16 @@ public class BarreMenu extends JMenuBar {
 			if (panneau.getNomFichier() != null) {
 				ObjectOutputStream enregistrement = null;
 				try {
-					enregistrement = new ObjectOutputStream(new FileOutputStream(panneau.getNomFichier()));
+					enregistrement = new ObjectOutputStream(
+							new FileOutputStream(panneau.getNomFichier()));
 					enregistrement.writeObject(panneau.getListe());
 					panneauTemp = panneau;
 				} catch (FileNotFoundException fichierNonTrouve) {
-					JOptionPane.showMessageDialog(panneau, "Fichier non trouvé");
+					JOptionPane.showMessageDialog(panneau,
+							"Fichier non trouvé");
 				} catch (IOException exc) {
-					JOptionPane.showMessageDialog(panneau, "Problème d'enregistrement du fichier");
+					JOptionPane.showMessageDialog(panneau,
+							"Problème d'enregistrement du fichier");
 				} finally {
 					try {
 						enregistrement.close();
@@ -143,21 +166,65 @@ public class BarreMenu extends JMenuBar {
 		private void enregistrerSous() {
 			JFileChooser sauvegarde = new JFileChooser();
 			sauvegarde.setDialogTitle("Enregistrez sous");
-			sauvegarde.addChoosableFileFilter(new FileNameExtensionFilter("Fichiers de formes", "formes"));
+			sauvegarde.addChoosableFileFilter(new FileNameExtensionFilter(
+					"Fichiers de formes", "formes"));
 
 			if (sauvegarde.showSaveDialog(panneau) == JFileChooser.APPROVE_OPTION) {
-				panneau.setNomFichier(sauvegarde.getSelectedFile().getAbsolutePath());
+				panneau.setNomFichier(sauvegarde.getSelectedFile()
+						.getAbsolutePath());
 				enregistrer();
 			}
 		}
 
-		private void ouvrir() {
+		private void ouvrir() throws ClassNotFoundException {
+			if (panneau != panneauTemp && panneau.getListe().size() != 0) {
+				int choix = JOptionPane.showConfirmDialog(null,
+						"Voulez-vous sauvegarder vos changement ?");
+				if (choix == 0) {
+					enregistrer();
+				} else if (choix == 1) {
+					ouvrirFichier();
+				}
+			} else {
+				ouvrirFichier();
+			}
+		}
 
+		private void ouvrirFichier() throws ClassNotFoundException {
+			JFileChooser choixFichier = new JFileChooser();
+			if (choixFichier.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				File file = choixFichier.getSelectedFile();
+				try (FileInputStream fileObject = new FileInputStream(file)) {
+					ObjectInputStream objectCourant = new ObjectInputStream(
+							fileObject);
+					ArrayList<Forme> liste;
+					liste = (ArrayList) objectCourant.readObject();
+					panneau.setListe(liste);
+					panneau.repaint();
+					// Cette ligne de commande ne marche pas parce que
+					// ma FenetrePrincipale n'est pas internet.
+					// FenetrePrincipale.this.setTitle(choixFichier.getSelectedFile().getName());
+					objectCourant.close();
+				} catch (FileNotFoundException e) {
+					JOptionPane.showMessageDialog(choixFichier,
+							"Fichier non trouv\u00E9");
+				} catch (IOException e) {
+					JOptionPane.showMessageDialog(choixFichier,
+							"Probl\u00E9me de lecture du fichier");
+				}
+			}
 		}
 
 		private void quitter() {
-			if (panneau != panneauTemp) {
+			if (panneau != panneauTemp && panneau.getListe().size() != 0) {
 				// TODO Ajouter confirmation pour quitter et enregistrer
+				int choix = JOptionPane.showConfirmDialog(null,
+						"Voulez-vous sauvegarder vos changement ?");
+				if (choix == 0) {
+					enregistrer();
+				} else if (choix == 1) {
+					System.exit(0);
+				}
 			} else {
 				System.exit(0);
 			}
@@ -165,8 +232,12 @@ public class BarreMenu extends JMenuBar {
 
 		private void aPropos() {
 			String Auteurs = "Patrick Papineau et Emile Brunelle";
-			JOptionPane.showMessageDialog(null,
-					"Auteur : " + Auteurs + "\nNom de l'application : Dessin Vectoriel\nVersion : 1.0");
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"Auteur : "
+									+ Auteurs
+									+ "\nNom de l'application : Dessin Vectoriel\nVersion : 1.0");
 		}
 
 	}

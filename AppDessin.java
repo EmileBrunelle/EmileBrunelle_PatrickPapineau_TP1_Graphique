@@ -1,4 +1,5 @@
 package EmileBrunelle_PatrickPapineau_TP1_Graphique;
+
 /*
  * Auteurs : Patrick Papineau et Émile Brunelle
  */

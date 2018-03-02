@@ -5,6 +5,11 @@ import java.awt.Graphics2D;
 
 public class Ovale extends Rectangle {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9088192920033311640L;
+
 	public Ovale(int x1, int y1, Color colorCont, Color colorRem) {
 		super(x1, y1, colorCont, colorRem);
 	}

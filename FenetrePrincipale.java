@@ -25,4 +25,8 @@ public class FenetrePrincipale extends JFrame {
 
 	}
 
+	public void setTitle(String title) {
+		this.setTitle(title);
+	}
+
 }

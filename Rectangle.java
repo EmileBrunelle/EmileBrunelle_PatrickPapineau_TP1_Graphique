@@ -4,6 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class Rectangle extends Forme {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8462773993684827642L;
 	private int largeur, hauteur;
 
 	public Rectangle(int x1, int y1, Color colorCont, Color colorRem) {

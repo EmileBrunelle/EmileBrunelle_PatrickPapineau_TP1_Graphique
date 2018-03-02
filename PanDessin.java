@@ -27,11 +27,11 @@ public class PanDessin extends JPanel {
 	public void setIndiceForme(char indiceForme) {
 		this.indiceForme = indiceForme;
 	}
-	
+
 	public String getNomFichier() {
 		return nomFichier;
 	}
-	
+
 	public void setNomFichier(String nomFichier) {
 		this.nomFichier = nomFichier;
 	}
@@ -48,7 +48,8 @@ public class PanDessin extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
-		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
 		for (Forme forme : liste) {
 			forme.tracer(g2);
 		}
@@ -73,15 +74,15 @@ public class PanDessin extends JPanel {
 	public Color getBg() {
 		return Bg;
 	}
-	
+
 	public void resetListe() {
-		liste .clear();
+		liste.clear();
 	}
 
 	public void setListe(ArrayList<Forme> liste) {
 		this.liste = liste;
 	}
-	
+
 	public ArrayList<Forme> getListe() {
 		return liste;
 	}
@@ -90,7 +91,8 @@ public class PanDessin extends JPanel {
 		this.premierClick = premierClick;
 	}
 
-	private class MouvementSourisListener implements MouseListener, MouseMotionListener {
+	private class MouvementSourisListener implements MouseListener,
+			MouseMotionListener {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -112,7 +114,8 @@ public class PanDessin extends JPanel {
 
 		@Override
 		public void mouseDragged(MouseEvent e) {
-			formeCourant.setParametres(premierClick.getX(), premierClick.getY(), e.getX(), e.getY());
+			formeCourant.setParametres(premierClick.getX(),
+					premierClick.getY(), e.getX(), e.getY());
 			repaint();
 		}
 

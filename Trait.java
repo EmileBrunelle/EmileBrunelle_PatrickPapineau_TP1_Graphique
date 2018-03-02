@@ -4,13 +4,17 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class Trait extends Forme {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5974667644469763956L;
 	private int formeX2, formeY2;
 
 	public Trait(int x1, int y1, Color colorCont, Color colorRem) {
 		super(x1, y1, colorCont, colorRem);
 
 	}
-	
+
 	public int getX2() {
 		return formeX2;
 	}
